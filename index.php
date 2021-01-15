@@ -77,12 +77,12 @@
     // ));
     // print_r($requete);
 
-    // //Requête qui lie le keyword "piratage" à l'url 7
+    // //Requête qui lie le keyword "piratage" à l'url de l'étape 7
     // $requete = "INSERT INTO `assoc_url_keyword` (`id_assoc_url`, `id_assoc_keyword`)
     //             VALUES (:id_assoc_url, :id_assoc_keyword);";
     // $prepare = $connexion->prepare($requete);
     // $prepare->execute(array(
-    //   ":id_assoc_url" => 7,
+    //   ":id_assoc_url" => 8,
     //   "id_assoc_keyword" => 19
     // ));
     // print_r($requete);
