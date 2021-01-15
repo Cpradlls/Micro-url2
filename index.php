@@ -57,35 +57,35 @@
     print_r([$requete, $resultat, $lastInsertedKeywordId]); //Affiche la requete, le resultat de la requete et la variable $lasInsertedKeywordId
 
     //Requete qui ajoute une entrée dans la table url
-    // $requete = "INSERT INTO `url` (`url`, `shortcut`, `datetime`, `description`)
-    //             VALUES (:url, :shortcut, :datetime, :description);";
-    // $prepare = $connexion->prepare($requete);
-    // $prepare->execute(array(
-    //   ":url" => "https://www.zataz.com/total-energie-direct-obligee-de-stopper-un-jeu-en-ligne-suite-a-une-fuite-de-donnees/",
-    //   ":shortcut" => "ztz7",
-    //   ":datetime" => "2021-01_15",
-    //   ":description" => "L'entreprise Total Energie Direct avait lancé un jeu en ligne. Le concours a dû être stoppé. Il était possible d'accéder aux données des autres joueurs."
-    // ));
-    // print_r($requete);
+    $requete = "INSERT INTO `url` (`url`, `shortcut`, `datetime`, `description`)
+                VALUES (:url, :shortcut, :datetime, :description);";
+    $prepare = $connexion->prepare($requete);
+    $prepare->execute(array(
+       ":url" => "https://www.zataz.com/total-energie-direct-obligee-de-stopper-un-jeu-en-ligne-suite-a-une-fuite-de-donnees/",
+       ":shortcut" => "ztz7",
+       ":datetime" => "2021-01_15",
+       ":description" => "L'entreprise Total Energie Direct avait lancé un jeu en ligne. Le concours a dû être stoppé. Il était possible d'accéder aux données des autres joueurs."
+    ));
+    print_r($requete);
 
     //Requete qui ajoute piratage dans la table 'keyword'
-    // $requete = "INSERT INTO `keyword` (`keyword_name`)
-    //             VALUES (:keyword_name);";
-    // $prepare = $connexion->prepare($requete);
-    // $prepare->execute(array(
-    //   ":keyword_name" => "piratage"
-    // ));
-    // print_r($requete);
+    $requete = "INSERT INTO `keyword` (`keyword_name`)
+                 VALUES (:keyword_name);";
+    $prepare = $connexion->prepare($requete);
+    $prepare->execute(array(
+       ":keyword_name" => "piratage"
+    ));
+    print_r($requete);
 
-    // //Requête qui lie le keyword "piratage" à l'url de l'étape 7
-    // $requete = "INSERT INTO `assoc_url_keyword` (`id_assoc_url`, `id_assoc_keyword`)
-    //             VALUES (:id_assoc_url, :id_assoc_keyword);";
-    // $prepare = $connexion->prepare($requete);
-    // $prepare->execute(array(
-    //   ":id_assoc_url" => 8,
-    //   "id_assoc_keyword" => 19
-    // ));
-    // print_r($requete);
+    //Requête qui lie le keyword "piratage" à l'url de l'étape 7
+    $requete = "INSERT INTO `assoc_url_keyword` (`id_assoc_url`, `id_assoc_keyword`)
+                VALUES (:id_assoc_url, :id_assoc_keyword);";
+    $prepare = $connexion->prepare($requete);
+    $prepare->execute(array(
+       ":id_assoc_url" => 8,
+       "id_assoc_keyword" => 19
+    ));
+    print_r($requete);
 
     //Pour aller plus loin jointure entre piratage et url associer
     $requete = "SELECT 
